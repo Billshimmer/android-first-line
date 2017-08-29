@@ -2,6 +2,7 @@ package com.example.shimmerbjh.myapplication;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -72,23 +73,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v){
         switch (v.getId()){
             case R.id.button:
-                String text = editText.getText().toString();
-                Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-                imageView.setImageResource(R.drawable.img_2);
-                progressBar.setProgress(progressBar.getProgress() + 10);
-                final AlertDialog.Builder dialog = new AlertDialog.Builder (MainActivity.this);
-                dialog.setTitle("这是一个对话框").setMessage("something need confirm").setCancelable(false);
-                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                    }
-                });
-                dialog.setNegativeButton("Cancal", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                    }
-                });
-                dialog.show();
+//                String text = editText.getText().toString();
+//                Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+//                imageView.setImageResource(R.drawable.img_2);
+//                progressBar.setProgress(progressBar.getProgress() + 10);
+//                final AlertDialog.Builder dialog = new AlertDialog.Builder (MainActivity.this);
+//                dialog.setTitle("这是一个对话框").setMessage("something need confirm").setCancelable(false);
+//                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                    }
+//                });
+//                dialog.setNegativeButton("Cancal", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                    }
+//                });
+//                dialog.show();
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
                 break;
             case R.id.text:
                 imageView.setImageResource(R.drawable.img_1);

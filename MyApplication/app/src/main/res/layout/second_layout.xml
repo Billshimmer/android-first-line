@@ -13,4 +13,21 @@
         android:text="返回上一个页面"
         >
     </Button>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+            android:id="@+id/input_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:hint="写点什么" />
+        <Button
+            android:id="@+id/send"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="发送"/>
+    </LinearLayout>
 </LinearLayout>
