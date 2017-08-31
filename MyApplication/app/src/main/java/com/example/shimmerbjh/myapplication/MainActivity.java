@@ -1,5 +1,8 @@
 package com.example.shimmerbjh.myapplication;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,6 +12,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -31,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ProgressBar progressBar;
     private IntentFilter intentFilter;
     private NetworkChangeReceiver networkChangeReceiver;
+    private int notificationId = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,8 +140,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent4);
                 break;
             case R.id.button_layout_5:
-                Intent intent5 = new Intent(MainActivity.this, TableActivity.class);
-                startActivity(intent5);
+//                Intent intent5 = new Intent(MainActivity.this, TableActivity.class);
+//                startActivity(intent5);
+                Intent intent5 = new Intent(this, ThirdActivity.class);
+                PendingIntent pi = PendingIntent.getActivity(this, 0, intent5, 0);
+                NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                Notification notification = new NotificationCompat.Builder(this)
+                        .setContentTitle("测试标题")
+                        .setContentText("测试内容")
+                        .setWhen(System.currentTimeMillis())
+                        .setSmallIcon(R.drawable.img_1)
+                        .setContentIntent(pi)
+                        .setAutoCancel(true)
+                        .build();
+                manager.notify(notificationId, notification);
                 break;
             default:
                 break;
