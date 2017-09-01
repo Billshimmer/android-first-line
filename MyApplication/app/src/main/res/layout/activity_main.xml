@@ -38,6 +38,22 @@
         android:layout_width="wrap_content"
         android:src="@drawable/img_1"
         android:id="@+id/img"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开启服务"
+        android:id="@+id/start_service"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:textAllCaps="false"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止服务"
+        android:id="@+id/stop_service"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:textAllCaps="false"/>
     <ProgressBar
         android:id="@+id/progress_bar"
         android:max="100"

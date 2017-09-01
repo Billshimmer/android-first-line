@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Environment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imageView = (ImageView) findViewById(R.id.img);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
+        Button startService = (Button) findViewById(R.id.start_service); startService.setOnClickListener(this);
+        Button stopService = (Button) findViewById(R.id.stop_service); stopService.setOnClickListener(this);
         intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         networkChangeReceiver = new NetworkChangeReceiver();
@@ -154,6 +157,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setAutoCancel(true)
                         .build();
                 manager.notify(notificationId, notification);
+                break;
+            case R.id.start_service:
+                Intent startIntent = new Intent(this, MyService.class);
+                startService(startIntent);
+                break;
+            case R.id.stop_service:
+                Intent stopIntent = new Intent(this, MyService.class);
+                stopService(stopIntent);
                 break;
             default:
                 break;
