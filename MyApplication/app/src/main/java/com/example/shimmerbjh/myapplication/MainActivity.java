@@ -1,5 +1,6 @@
 package com.example.shimmerbjh.myapplication;
 
+import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         btnShow = (Button) findViewById(R.id.button);btnShow.setOnClickListener(this);
         btnLayout_1 = (Button) findViewById(R.id.button_layout_1); btnLayout_1.setOnClickListener(this);
         btnLayout_2 = (Button) findViewById(R.id.button_layout_2); btnLayout_2.setOnClickListener(this);
