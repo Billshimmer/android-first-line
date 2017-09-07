@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         showBtn = (Button) findViewById(R.id.showCitys);
-        progressBar = (ProgressBar) findViewById(R.id.progress);
         showBtn.setOnClickListener(this);
 
     }

@@ -30,12 +30,4 @@
         android:textSize="18sp"
         android:gravity="center"
         android:text="矩形边框的TextView" />
-    <ProgressBar
-        android:layout_height="10dp"
-        android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:id="@+id/progress"
-        android:background="@color/colorPrimary"
-
-        />
 </LinearLayout>
